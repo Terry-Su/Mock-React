@@ -12,7 +12,7 @@ module.exports = {
   },
   // extends: ["eslint:recommended", "plugin:react/recommended"],
   rules: {
-    "operator-linebreak": ["warn", "after"],
+    // "operator-linebreak": ["warn", "after"],
     semi: [
       "warn",
       "never",
