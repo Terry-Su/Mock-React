@@ -6,9 +6,16 @@
     "node_module"
   ],
   "compilerOptions": {
-    "module": "es6",
     "target": "es5",
     "allowJs": true,
     "outDir": "build",
-  }
+		"sourceMap": true,
+    "noImplicitAny": true,
+		"lib": [
+			"es5",
+			"es2015",
+		],
+		"allowSyntheticDefaultImports": true,
+  },
+  "typeRoots": ["src/typings/**/*"]
 }
