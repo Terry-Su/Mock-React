@@ -1,11 +1,13 @@
 import { createElement } from "../MElement"
 import { render } from "../../m-dom"
 import { JSDOM }  from 'jsdom'
+import { mount } from "../../m-tmp/mount"
+import mountTree from "../../m-tmp/mountTree"
 
-const document = ( new JSDOM() ).window.document
 const g: any = global
-g[ 'document' ] = document
+const resetDocument = () => { g[ 'document' ] = ( new JSDOM() ).window.document }
 
+resetDocument()
 
 const place = ( element: any, log?: boolean ) => log && console.log( element )
 
@@ -18,11 +20,21 @@ describe( 'm', () => {
 
 
 
-describe( 'm-dom', () => {
-  it( 'MDom.render', () => {
+describe( 'm-tmp', () => {
+  it( 'mount', () => {
+    resetDocument()
     const childMElement = createElement( 'div' )
     const mElement = createElement( 'div', { children: childMElement }  )
-    render( mElement, document.body )
+    const node = mount( mElement )
+    document.body.appendChild( node )
+    place( document.body )
+  } )
+
+  it ( 'mountTree', () => {
+    resetDocument()
+    const childMElement = createElement( 'div' )
+    const mElement = createElement( 'div', { children: childMElement }  )
+    mountTree( mElement, document.body )
     place( document.body )
   } )
 } )
