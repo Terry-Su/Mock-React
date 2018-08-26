@@ -1,4 +1,5 @@
 import { isArray } from "util"
+import { MHTMLElement } from "../typings/DOM"
 
 export function instantiateComponent( element: MElement ) {
   const { type } = element
@@ -19,7 +20,7 @@ export class DOMComopnent {
     this.currentElement = element
   }
 
-  mount() {
+  mount(): MHTMLElement {
     const { type, props = {} } = this.currentElement
     let { children = [] } = props
 
@@ -44,6 +45,11 @@ export class DOMComopnent {
 
     return node
   }
+
+  unmount() {
+    const { renderedChildren } = this
+    renderedChildren.forEach( child => child.unmount() )
+  }
 }
 
 export class CompositeComponent {
@@ -62,4 +68,10 @@ export class CompositeComponent {
 
     return renderedComponent.mount()
   }
+
+  unmount() {
+    const { renderedComponent } = this
+    renderedComponent.unmount()
+  }
+  
 }
