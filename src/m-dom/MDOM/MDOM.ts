@@ -1,5 +1,4 @@
 import legacyRenderSubtreeIntoContainer from "./legacyRenderSubtreeIntoContainer"
-
 const MDOM = {
   render(
     element: M$Element,
