@@ -1,7 +1,7 @@
 import { isArray } from "util"
-import { MHTMLElement } from "../typings/DOM"
 import { notArray, notNil } from "../util/js"
 import { isNil } from "lodash"
+import { MHTMLElement } from "../typings/DOM"
 
 export function instantiateComponent( element: MElement ) {
   const { type } = element
@@ -92,7 +92,7 @@ export class DOMComopnent {
     let nextRenderedChildren = []
 
     /* As we iterate over children, we will add operations to the array */
-    type Operation = { type: string, node?: MHTMLElement, prevNode?: MHTMLElement, nextNode?: MHostElement }
+    type Operation = { type: string, node?: MHTMLElement, prevNode?: MHTMLElement, nextNode?: MHTMLElement }
     type OperationQueue = Operation[]
     let operationQueue: OperationQueue = []
 
