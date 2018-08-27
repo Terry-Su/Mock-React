@@ -6,7 +6,7 @@ import MBatch from "../MBatch/MBatch"
 const DOMRenderer: any = {}
 
 export default class MRoot {
-  _internalRoot: any
+  _internalRoot: FiberRoot
 
   constructor( container: any, isAsync: boolean, hydrate: boolean ) {
     this._internalRoot = DOMRenderer.creaetContainer( container, isAsync, hydrate )
