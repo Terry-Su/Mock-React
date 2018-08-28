@@ -9,11 +9,11 @@ export function updateContainer(
   const { current } = container
   const currentTime = requestCurrentTime()
   const expirationTime = computeExpirationForFiber( currentTime, current )
-  return updateContainerAtExpirationTime(
-    element,
-    container,
-    parentComponent,
-    expirationTime,
-    callback
-  )
+  // return updateContainerAtExpirationTime(
+  //   element,
+  //   container,
+  //   parentComponent,
+  //   expirationTime,
+  //   callback
+  // )
 }

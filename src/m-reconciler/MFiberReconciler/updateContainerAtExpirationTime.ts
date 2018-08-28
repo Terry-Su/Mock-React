@@ -21,7 +21,7 @@ export default function updateContainerAtExpirationTime(
     container.pendingContext = context
   }
 
-  return scheduleRootUpdate( current, element, expirationTime, callback )
+  // return scheduleRootUpdate( current, element, expirationTime, callback )
 }
 
 function getContextForSubtree(

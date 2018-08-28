@@ -66,7 +66,7 @@ type Fiber = {
   mode: tmpAny,
 
   // Effect
-  effectTag: TypeOfSideEffect,
+  effectTag: tmpAny,
 
   // Singly linked list fast path to the next fiber with side-effects.
   nextEffect: Fiber | null,

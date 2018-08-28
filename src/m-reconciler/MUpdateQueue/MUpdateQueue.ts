@@ -172,7 +172,7 @@ export function createUpdate( expirationTime: ExpirationTime ): Update<any> {
 }
 
 
-function appendUpdateToQueue<State>(
+export function appendUpdateToQueue<State>(
   queue: UpdateQueue<State>,
   update: Update<State>
 ) {

@@ -4,7 +4,7 @@ module.exports = {
     // "**/*.spec.js",    
 
     /* From source code */
-    "fromSOurceCode/MWork/__test__/index.spec.js"
+    // "fromSOurceCode/MWork/__test__/index.spec.js"
     
     /* m */
     // "m/__test__/index.spec.js",
@@ -13,6 +13,10 @@ module.exports = {
     // "m-tmp/__test__/mount.spec.js",
     // "m-tmp/__test__/mountTree.spec.js",
     // "m-tmp/__test__/mountTreeTwice.spec.js",
+
+    /* m-reconciler */
+    "m-reconciler/MUpdateQueue/__test__/index.spec.js",
+
   ],
   helpers                     : [],
   stopSpecOnExpectationFailure: false,

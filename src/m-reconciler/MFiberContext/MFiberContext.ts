@@ -1,28 +1,30 @@
+import Fiber from "../MFiber/Fiber"
+
 export const emptyContextObject = {}
 
-function findCurrentUnmaskedContext( fiber: Fiber ): Object {
+function findCurrentUnmaskedContext( fiber: Fiber ): any {
   let node = fiber
-  do {
-    switch ( node.tag ) {
-      case HostRoot:
-        return node.stateNode.context
-      case ClassComponent: {
-        const Component = node.type
-        if ( isContextProvider( Component ) ) {
-          return node.stateNode.__reactInternalMemoizedMergedChildContext
-        }
-        break
-      }
-      case ClassComponentLazy: {
-        const Component = getResultFromResolvedThenable( node.type )
-        if ( isContextProvider( Component ) ) {
-          return node.stateNode.__reactInternalMemoizedMergedChildContext
-        }
-        break
-      }
-    }
-    node = node.return
-  } while ( node !== null )
+  // do {
+  //   switch ( node.tag ) {
+  //     case HostRoot:
+  //       return node.stateNode.context
+  //     case ClassComponent: {
+  //       const Component = node.type
+  //       if ( isContextProvider( Component ) ) {
+  //         return node.stateNode.__reactInternalMemoizedMergedChildContext
+  //       }
+  //       break
+  //     }
+  //     case ClassComponentLazy: {
+  //       const Component = getResultFromResolvedThenable( node.type )
+  //       if ( isContextProvider( Component ) ) {
+  //         return node.stateNode.__reactInternalMemoizedMergedChildContext
+  //       }
+  //       break
+  //     }
+  //   }
+  //   node = node.return
+  // } while ( node !== null )
 }
 
 export {
